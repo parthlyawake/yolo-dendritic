@@ -24,6 +24,11 @@ This project demonstrates that dendritic architectures can accelerate convergenc
 
 ## Usage Instructions – Required
 
+### Dataset
+https://cocodataset.org/#download
+The 2017 Training and Validation set.
+---
+
 ### Installation
 ```
 pip install -r requirements.txt
