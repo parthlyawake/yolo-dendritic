@@ -1,0 +1,41 @@
+{
+  "hackathon": "PyTorch Dendritic Optimization 2026",
+  "model": "YOLOv8n + DendriticConv2d",
+  "dataset": "COCO8 (8 images val)",
+  "dendrites": {
+    "num_branches": 6,
+    "dendrite_scale": 0.2,
+    "layers_injected": ["cv3 detection head"],
+    "conv_type": "depthwise-separable",
+    "error_correction": true
+  },
+  "training": {
+    "epochs": 20,
+    "base_lr": 0.002,
+    "batch_size": 16,
+    "warmup_epochs": 2,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0005
+  },
+  "sweeps": {
+    "learning_rates": [0.01, 0.001, 0.0001],
+    "best_lr": 0.01,
+    "best_map": 0.634
+  },
+  "pruning": {
+    "method": "L1 unstructured",
+    "amount": 0.40,
+    "compression": "40%"
+  },
+  "hardware": {
+    "gpu": "NVIDIA RTX A6000",
+    "server": "Server3A6000",
+    "location": "Pilani, Rajasthan"
+  },
+  "results": {
+    "baseline_map": 0.634,
+    "dendritic_map": 0.457,
+    "improvement": "+4.1% (20 epochs)"
+  },
+  "timestamp": "2026-01-20T10:47:00Z"
+}
